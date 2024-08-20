@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CsWallCtrl : MonoBehaviour
 {
+    public GameObject sparkEffect;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,6 +20,8 @@ public class CsWallCtrl : MonoBehaviour
     {
         if(collision.collider.tag == "BULLET")
         {
+            GameObject spark = Instantiate(sparkEffect, collision.transform.position, Quaternion.identity);
+            Destroy(spark, 0.2f);
             Destroy(collision.gameObject);
         }
     }

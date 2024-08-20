@@ -20,8 +20,6 @@ public class CsPlayerCtrl : MonoBehaviour
     public float rotSpeed = 100f;
     public Anim anim;
     public Animation _animation;
-    public GameObject bullet;
-    public GameObject bulletFactory;
     // Start is called before the first frame update
     void Start()
     {
@@ -65,11 +63,6 @@ public class CsPlayerCtrl : MonoBehaviour
         {
             
             _animation.CrossFade(anim.idle.name, 0.4f);
-        }
-
-        if (Input.GetMouseButtonDown(0))
-        {
-            Instantiate(bullet,bulletFactory.transform.position,Quaternion.identity);
         }
     }
 }
